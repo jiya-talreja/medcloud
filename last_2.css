@@ -1,0 +1,49 @@
+
+    body {
+        background-color: lightblue;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    /* Headings */
+    h1 {
+        text-align: center;
+    }
+
+    h3,h2 {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    /* Buttons */
+    button {
+        padding: 10px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        border-radius: 5px;
+    }
+
+    /* First button (Back to symptoms page) */
+    #heading button {
+        background-color: darkblue;
+    }
+
+    /* Last button (Confirm appointment) */
+    #forward button {
+        background-color: red;
+    }
+
+    /* Table styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }

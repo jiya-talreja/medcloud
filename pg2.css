@@ -1,0 +1,75 @@
+/* Basic page style */
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+    background-image: url('bg23.jpeg');
+    background-size: cover;
+    margin: 0;
+}
+
+/* Center the block section */
+.block {
+    text-align: center;
+    margin-top: 30px;
+    background-color: rgba(f,f,f, 0.7);
+    padding: 15px;
+    border-radius: 30px;
+    width: 90%;
+    font-size: larger;
+    
+}
+
+/* Layout for the tips and privacy note */
+.next {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tips section (left) */
+#check {
+    width: 45%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+/* Privacy section (right, in red) */
+#note {
+    width: 45%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    color: red;
+}
+
+/* Center the button below everything */
+button {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 25px;
+    font-size: 24px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    .next {
+        flex-direction: column;
+        align-items: center;
+    }
+    #check, #note {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}
