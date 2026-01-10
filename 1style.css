@@ -1,0 +1,265 @@
+
+body {
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: 
+    linear-gradient(rgba(0, 180, 216, 0.4), rgba(255, 255, 255, 0.6)),
+    url("bg5ex.jpeg") no-repeat center center/cover;
+    backdrop-filter: blur(3px);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: center;
+}
+
+nav h2 {
+  
+    display: inline;
+    margin-right: 60%;
+}
+nav h2 img{
+  margin-right: 10px;
+  width:30px;
+  height: 30px;
+}
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+
+.modal {
+      display: none; 
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); 
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: linear-gradient(135deg, #0a4d8c, #0e77b8);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 60%;
+      max-width: 600px;
+      min-height: 300px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+      animation: slideDown 0.4s ease;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+    }
+    .modal-content ul {
+      list-style: none;
+      padding: 0;
+    }
+    .modal-content li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .close-btn {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+    }
+    .close-btn:hover {
+      color: #ff4444;
+    }
+
+  
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 43, 91, 0.95);
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: change arrow on hover */
+.dropdown:hover .dropbtn {
+  text-decoration: underline;
+}
+
+/* Two-section main layout */
+.main-sections {
+    display: flex;
+    justify-content: space-around; 
+    padding: 50px 20px;
+    min-height: 60vh;
+}
+/* Left side (About section) */
+#about {
+    border-radius: 40px;
+    padding: 30px;
+    width: 40%;
+    align-items: center;
+    animation: float-welcome 1.5s ease-in-out infinite;
+    will-change: transform;
+}
+
+#about h1 {
+  
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+
+#about p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+@keyframes float-welcome {
+    0%, 100% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Right side (Login section) */
+#get-started {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 50px;
+}
+
+#get-started h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 20px;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgb(67, 65, 65);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #302727;
+}
+/* Error message */
+.error {
+  color: #e63946;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Signup suggestion */
+.suggestion {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.suggestion button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+.suggestion button:hover {
+  background: #023e8a;
+}
+
+/* Mobile friendly */
+@media screen and (max-width: 768px) {
+    .main-sections {
+        flex-direction: column;
+    }
+    #about, #get-started {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+.footer-marquee {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+  font-size: 15px;
+  padding: 8px 0;
+  text-align: center;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+

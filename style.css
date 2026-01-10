@@ -1,0 +1,190 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  color: #2e2e2e;
+  background-color: #f8fafc;
+  padding: 40px;
+}
+
+/* Typography */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #1c1c1c;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 span {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Layout: main doc container */
+.doc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Left column */
+.left {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin: 20px 0 30px;
+}
+
+/* Doctor photo */
+.doctor-photo {
+  max-width: 380px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.doctor-photo:hover {
+  transform: scale(1.03);
+}
+
+/* Right column (patients list) */
+.right {
+  flex: 1;
+  min-width: 320px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Patient list styling */
+.patient-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.patient-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  border-left: 4px solid #1c1c1c;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.patient-list li:hover {
+  background: #eef2ff;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.patient-list a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.patient-list a:hover {
+  color: #2563eb;
+}
+
+/* Appointment badge */
+.appointment-box {
+  font-size: 0.9rem;
+  color: #475569;
+  background: #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Patient details page */
+.detail-doc {
+  max-width: 600px;
+  margin: 80px auto;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.details {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.details p {
+  margin: 12px 0;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 26px;
+  background: #111827;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .doc {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .right {
+    padding: 30px;
+  }
+
+  .doctor-photo {
+    max-width: 100%;
+  }
+}

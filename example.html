@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Departments</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+    }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #2d7aaf;
+        color: white;
+    }
+
+    .navbar h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .navbar a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* Department list */
+    .department-list {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    .department-item {
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+
+    .department-item:hover {
+        transform: translateY(-2px);
+    }
+
+    .department-main {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .department-main img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+    .department-main div h3 {
+        margin: 0 0 5px 0;
+        color: #2d7aaf;
+        font-size: 18px;
+    }
+
+    .department-main div p {
+        margin: 0;
+        color: #555;
+        font-size: 14px;
+    }
+
+    /* Dropdown section */
+    .department-dropdown {
+        display: none;
+        padding: 0 15px 15px 15px;
+        border-top: 1px solid #eee;
+        background-color: #fafafa;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .department-item.active .department-dropdown {
+        display: block;
+    }
+.flip-container {
+  display: inline-block;
+  perspective: 1000px;
+}
+
+.flipping-text {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+}
+
+.flipping-text span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  transform-origin: center;
+  opacity: 0;
+  transform: rotateX(90deg);
+  animation: flipWords 21s infinite; /* 3 words × 7s each = 21s cycle */
+}
+
+/* Sequential animation delays */
+.flipping-text span:nth-child(1) { animation-delay: 0s; }
+.flipping-text span:nth-child(2) { animation-delay: 7s; }
+.flipping-text span:nth-child(3) { animation-delay: 14s; }
+
+@keyframes flipWords {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  5%, 25% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  30%, 100% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>CityCare Hospital</h1>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
+
+<div class="department-list">
+
+    <!-- Department 1: Cardiology -->
+    <div class="department-item">
+        <div class="department-main">
+            <img src="https://images.unsplash.com/photo-1588776814546-6b20d47f9f70?auto=format&fit=crop&w=800&q=60" alt="Cardiology">
+            <div>
+                <h3>Cardiology</h3>
+                <p>Heart care, blood pressure, cholesterol management.</p>
+            </div>
+        </div>
+        <div class="department-dropdown">
+            <p>Services: ECG, Stress Test, Heart Surgery Consultation, Cholesterol Management.</p>
+        </div>
+    </div>
+
+    <!-- Department 2: Orthopedics -->
+    <div class="department-item">
+        <div class="department-main">
+            <img src="https://images.unsplash.com/photo-1606813902411-48e6f345d17f?auto=format&fit=crop&w=800&q=60" alt="Orthopedics">
+            <div>
+                <h3>Orthopedics</h3>
+                <p>Bone, joint, and muscle care.</p>
+            </div>
+        </div>
+        <div class="department-dropdown">
+            <p>Services: Fracture Treatment, Arthritis Care, Joint Replacement, Physiotherapy.</p>
+        </div>
+    </div>
+
+    <!-- Department 3: Dermatology -->
+    <div class="department-item">
+        <div class="department-main">
+            <img src="https://images.unsplash.com/photo-1588776815446-90b112d4f0f8?auto=format&fit=crop&w=800&q=60" alt="Dermatology">
+            <div>
+                <h3>Dermatology</h3>
+                <p>Skin, hair, and nail treatments.</p>
+            </div>
+        </div>
+        <div class="department-dropdown">
+            <p>Services: Acne, Eczema, Skin Infections, Hair Treatments, Cosmetic Dermatology.</p>
+        </div>
+    </div>
+
+    <!-- Department 4: Pediatrics -->
+    <div class="department-item">
+        <div class="department-main">
+            <img src="https://images.unsplash.com/photo-1588776815555-bc1d0c0f0b1b?auto=format&fit=crop&w=800&q=60" alt="Pediatrics">
+            <div>
+                <h3>Pediatrics</h3>
+                <p>Child healthcare and vaccinations.</p>
+            </div>
+        </div>
+        <div class="department-dropdown">
+            <p>Services: Growth Monitoring, Vaccinations, Fever & Infection Care, Nutrition Guidance.</p>
+        </div>
+    </div>
+
+    <!-- Department 5: Gynecology -->
+    <div class="department-item">
+        <div class="department-main">
+            <img src="https://images.unsplash.com/photo-1588776815666-cb2f0b0f2b1b?auto=format&fit=crop&w=800&q=60" alt="Gynecology">
+            <div>
+                <h3>Gynecology</h3>
+                <p>Women's health and pregnancy care.</p>
+            </div>
+        </div>
+        <div class="department-dropdown">
+            <p>Services: Pregnancy Care, Menstrual Health, Hormone Management, Ultrasound & Checkups.</p>
+        </div>
+    </div>
+
+    <!-- Department 6: ENT -->
+    <div class="department-item">
+        <div class="department-main">
+            <img src="https://images.unsplash.com/photo-1588776815777-dc2f0c0f3b2b?auto=format&fit=crop&w=800&q=60" alt="ENT">
+            <div>
+                <h3>ENT</h3>
+                <p>Ear, nose, and throat care.</p>
+            </div>
+        </div>
+        <div class="department-dropdown">
+            <p>Services: Sinus Treatment, Hearing Tests, Allergy Management, Throat & Voice Care.</p>
+        </div>
+    </div>
+
+   
+</div>
+
+</div>
+
+<script>
+    // Toggle dropdown when clicking the whole card
+    const departmentItems = document.querySelectorAll('.department-item');
+    departmentItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>

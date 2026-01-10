@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome page</title>
+  <link rel="stylesheet" href="1style.css">
+</head>
+<body>
+    <!-- Simple Navigation -->
+    <nav>
+        <h2><img src="logo1.jpg" alt="logo">MEDCLOUD</h2>
+        <a href="#" id="openEvents">Events</a>
+        <a href="about.html">About Us</a> |
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Contact Us ▾</a>
+            <div class="dropdown-content">
+                <p>tel:+91123456789</p>
+                <a href="support@medcloud.com">Email Us</a>
+    </div>
+    </nav>
+    <div id="eventsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Hospital Events</h3>
+      <ul>
+        <li> Blood Donation Camp - Oct 5</li>
+        <li> Free Eye Checkup - Oct 12</li>
+        <li> Vaccination Drive - Oct 20</li>
+        <li> Heart Health Awareness - Oct 28</li>
+      </ul>
+    </div>
+  </div>
+
+    <!-- Welcome Section -->
+     <div class="main-sections">
+    <section id="about">
+        <h1>WELCOME TO CLOUD-COMFORT!</h1>
+        <p>MedCloud is here so that you can book your appointment anytime, anywhere.
+            Say Bye to discomforting experiences.
+        </p>
+    </section>
+
+    <!-- Login Section -->
+    <section id="get-started">
+    <h2>Patient Login</h2>
+    <form id="loginForm">
+        <label for="username">Email or Username</label>
+        <input type="email" id="username" name="username" placeholder="Enter your email or username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button id="names" type="submit">Log In</button>
+
+        <!-- Inline error + signup suggestion -->
+        <div id="error-message" class="error"></div>
+        <div id="signup-suggestion" class="suggestion" style="display:none;">
+            Don’t have an account? 
+            <button type="button" onclick="goToSignup()">Create a MedCloud Account</button>
+        </div>
+    </form>
+</section>
+
+<marquee behavior="scroll" direction="left" scrollamount="6" class="footer-marquee">
+  MedCloud Online Hospital System — Helping You Connect with Doctors Anytime, Anywhere. | Version 1.0 | Errors may occur, please report issues via Contact Us.
+</marquee>
+
+    <script src="1script.js"></script>
+</body>
+</html>

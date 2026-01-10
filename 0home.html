@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIF and Text Section</title>
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(rgba(0, 180, 216, 0.4), rgba(255, 255, 255, 0.6));
+}
+
+#split-section {
+  display: flex;
+  height: 100vh;
+}
+
+.gif-side {
+  width: 50%;
+  background: url("gif.gif") center/cover no-repeat;
+}
+
+.text-side {
+  width: 50%;
+  background: linear-gradient(rgba(5, 196, 234, 0.4), rgba(255, 255, 255, 0.6));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.text-side h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #4169E1;
+}
+
+/* ===== FLIP TEXT SECTION ===== */
+.flip-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color:  #4169E1;/* small space between text and flipping words */
+  margin-top: 20px;
+  gap: 4px; 
+}
+
+.static-text {
+  display: inline-block;
+}
+
+/* flipping words wrapper */
+.flipping-text {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  width: 100px; /* fixed width to keep layout steady */
+  margin: 0;              /* removes browser default paragraph margin */
+  padding: 0;             /* ensures no internal spacing */
+  letter-spacing: 0.5px;
+}
+
+/* Each flipping layer */
+.flipping-text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform-origin: center;
+  transform: rotateX(90deg);
+  backface-visibility: hidden;
+  animation: flipSentences 14s infinite;
+}
+
+/* Word sequence */
+.flipping-text span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.flipping-text span:nth-child(2) {
+  animation-delay: 7s;
+}
+
+/* Animation keyframes */
+@keyframes flipSentences {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  5%, 45% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  50%, 100% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+}
+  </style>
+</head>
+<body>
+  <section id="split-section">
+    <div class="gif-side"></div>
+    <div class="text-side">
+      <img src="logo1.jpg" alt="Logo" class="logo">
+      <h1>Welcome to MedCloud</h1>
+
+      <div class="flip-container">
+        <p class="static-text">Have a comfortable journey by</p>
+        <div class="flipping-text">
+          <span onclick="window.location.href='form.html'">Sign In</span>
+          <span onclick="window.location.href='1login.html'">Log In</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
